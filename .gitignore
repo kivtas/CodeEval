@@ -1,0 +1,12 @@
+# Ignore the virtual environment
+venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# OS and editor-specific files
+.DS_Store
+*.swp
+.vscode/
+
