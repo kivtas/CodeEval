@@ -1,5 +1,5 @@
 # Ignore the virtual environment
-venv/
+codeeval-venv/
 
 # Python cache
 __pycache__/
@@ -10,3 +10,5 @@ __pycache__/
 *.swp
 .vscode/
 
+# Environment variables
+.env

@@ -1,0 +1,6 @@
+# app/storage.py
+# Manages file handling and storage for student submissions and grading outputs.
+# This includes saving the received code, storing test results, and file organization.
+
+def save_submission(user_id: str, assignment_id: str, code: str): ...
+def get_test_cases(assignment_id: str): ...
