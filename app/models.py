@@ -19,14 +19,13 @@ class FunctionTestGroup(BaseModel):
     target_function: str
     test_cases: List[TestCase]
 
-class AssignmentSubmissionRequest(BaseModel):
-    assignment_id: int
+class CodeOnlySubmissionRequest(BaseModel):
     code: str
     
 class GradingResult(BaseModel):
     passed: bool  # Whether the submission passed all test cases
     output: Optional[str]  # The output of running the code (stdout, error messages, etc.)
-    details: Optional[str]  # Any additional details about the grading process (e.g., error messages)
+    details: list  # Any additional details about the grading process (e.g., error messages)
 
 class InstructorRegistrationRequest(BaseModel):
     name: str
@@ -70,4 +69,16 @@ class AssignmentCreate(BaseModel):
     due_date: datetime.datetime
     starter_code: Optional[str] = None
     tests: List[CreateFunctionTestGroup]
+
+class StarterCodeUpdate(BaseModel):
+    starter_code: Optional[str] = None
+
+class NewTestCase(BaseModel):
+    target_function: str
+    input: Any
+    expected_output: Any
+    public: bool
+
+class GradeUpdate(BaseModel):
+    grade: str  # You can change to int or float if grading is numeric
 

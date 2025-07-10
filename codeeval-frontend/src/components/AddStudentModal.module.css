@@ -1,0 +1,53 @@
+/* src/components/AddStudentModal.module.css */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+  }
+  
+  .modal {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .form input {
+    padding: 8px;
+    font-size: 14px;
+  }
+  
+  .form button {
+    padding: 8px;
+    cursor: pointer;
+  }
+  
+  .cancel {
+    background: lightgray;
+  }
+  
+  .error {
+    color: red;
+    margin-top: 10px;
+  }
+  
+  .success {
+    margin-top: 10px;
+    background: #e6ffed;
+    padding: 10px;
+    border-radius: 6px;
+  }

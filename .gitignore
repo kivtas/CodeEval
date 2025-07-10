@@ -1,14 +1,19 @@
-# Ignore the virtual environment
-codeeval-venv/
-
-# Python cache
+# Bytecode
 __pycache__/
 *.py[cod]
 
-# OS and editor-specific files
-.DS_Store
-*.swp
-.vscode/
-
-# Environment variables
+# Environment
 .env
+codeeval-venv/
+venv/
+
+# Node
+node_modules/
+build/
+dist/
+
+# Database (for production)
+codeeval.db
+
+# OS-specific
+.DS_Store

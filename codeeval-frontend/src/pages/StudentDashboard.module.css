@@ -1,0 +1,55 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    background: #f9fafb;
+    height: 100vh;
+    font-family: sans-serif;
+  }
+  
+  .header {
+    background-color: #3b82f6;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: default;
+  }
+  
+  .logout {
+    background: white;
+    color: #3b82f6;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    width: auto;            /* ✅ Prevents full-width */
+    display: inline-block;  /* ✅ Ensures content-width sizing */
+  }
+  
+  .welcome {
+    margin: 1.5rem 2rem;
+    font-size: 1.25rem;
+  }
+  
+  .assignmentGrid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 0 2rem;
+  }
+  
+  .assignmentBox {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    width: 200px;
+    background-color: #fefefe;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  }
+  

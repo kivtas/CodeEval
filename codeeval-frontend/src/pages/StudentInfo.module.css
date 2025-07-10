@@ -1,0 +1,23 @@
+.container {
+    padding: 2rem;
+    font-family: sans-serif;
+  }
+  
+  .back {
+    margin-bottom: 1rem;
+    background: none;
+    border: none;
+    color: #007bff;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .loading {
+    padding: 2rem;
+  }
+  
+  .error {
+    color: red;
+    padding: 2rem;
+  }
+  

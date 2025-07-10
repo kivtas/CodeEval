@@ -25,7 +25,7 @@ def verify_token(token: str, max_age: int = 3600):
 
 async def send_verification_email(email: str):
     token = generate_token(email)
-    link = f"http://127.0.0.1:8000/verify-email?token={token}"
+    link = f"http://localhost:5173/verify?token={token}"
 
     message = EmailMessage()
     message["From"] = EMAIL_USER

@@ -1,0 +1,32 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(to right, #eef2f3, #dce3e8);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 1rem;
+  }
+  
+  .title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    color: #333;
+    text-align: center;
+  }
+  
+  .message {
+    font-size: 1.2rem;
+    color: #555;
+    margin-top: 1rem;
+    text-align: center;
+  }
+  
+  .error {
+    color: #d93025;
+    font-weight: bold;
+    margin-top: 1rem;
+  }
+  

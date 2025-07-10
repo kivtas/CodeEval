@@ -1,0 +1,181 @@
+.pageLayout {
+  display: flex;
+  height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f9fafb;
+  padding: 1rem;
+  gap: 1rem;
+  box-sizing: border-box;
+}
+
+/* LEFT COLUMN */
+.leftColumn {
+  width: 220px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1rem;
+  overflow-y: auto;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 0.1);
+}
+
+.leftColumn h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #2563eb;
+}
+
+.studentList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.studentItem {
+  padding: 0.5rem 0.75rem;
+  background: #f3f4f6;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #1f2937;
+  font-weight: 500;
+  transition: background-color 0.15s ease-in-out;
+}
+
+.studentItem:hover {
+  background-color: #dbeafe;
+}
+
+/* CENTER PANEL */
+.editorPanel {
+  flex: 1.5;
+  display: flex;
+  flex-direction: column;
+}
+
+.editorPanel h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.buttonRow {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.buttonRow button {
+  padding: 0.6rem 1.2rem;
+  background-color: #3b82f6;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.buttonRow button:hover {
+  background-color: #2563eb;
+}
+
+.console {
+  margin-top: 1.5rem;
+  background-color: #1e1e1e;
+  color: #d4d4d4;
+  padding: 1rem;
+  border-radius: 6px;
+  font-family: monospace;
+  font-size: 0.9rem;
+  height: 150px;
+  overflow-y: auto;
+}
+
+/* RIGHT COLUMN */
+.rightColumn {
+  width: 300px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1rem;
+  overflow-y: auto;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 0.1);
+}
+
+.rightColumn h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #2563eb;
+}
+
+.addTestCaseButton {
+  width: 100%;
+  background-color: #10b981;
+  border: none;
+  color: white;
+  font-weight: 600;
+  padding: 0.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.addTestCaseButton:hover {
+  background-color: #059669;
+}
+
+.testCaseList {
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.testGroup {
+  margin-bottom: 1rem;
+}
+
+.testGroup h4 {
+  margin-bottom: 0.5rem;
+  color: #1f2937;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 0.25rem;
+}
+
+.testItem {
+  background-color: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  border-radius: 5px;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  position: relative;
+}
+
+.testItem strong {
+  font-weight: 600;
+}
+
+.deleteButton {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: #ef4444;
+  border: none;
+  color: white;
+  border-radius: 3px;
+  width: 22px;
+  height: 22px;
+  font-weight: bold;
+  cursor: pointer;
+  line-height: 18px;
+  text-align: center;
+  padding: 0;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.deleteButton:hover {
+  background-color: #dc2626;
+}

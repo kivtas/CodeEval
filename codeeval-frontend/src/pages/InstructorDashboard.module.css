@@ -1,0 +1,130 @@
+/* src/pages/InstructorDashboard.module.css */
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #3b82f6; /* Tailwind blue-500 */
+}
+
+.logout {
+  background-color: #ef4444;
+  color: white;
+  padding: 0.5rem 1.2rem;
+  font-size: 0.95rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+
+  max-width: 120px; /* new: limit max width */
+  white-space: nowrap; /* prevent wrapping */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.logout:hover {
+  background-color: #dc2626; /* Tailwind red-600 */
+}
+
+.welcome {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #111827; /* Tailwind gray-900 */
+  margin-bottom: 1.5rem;
+}
+
+.classList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.classBox {
+  background-color: #f9fafb; /* Tailwind gray-50 */
+  border: 1px solid #e5e7eb; /* Tailwind gray-200 */
+  padding: 1.25rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  position: relative;
+  font-weight: 500;
+  color: #1f2937; /* Tailwind gray-800 */
+}
+
+.classBox button {
+  margin-top: 1rem;
+  background-color: #f87171; /* Tailwind red-400 */
+  border: none;
+  color: white;
+  padding: 0.4rem 0.9rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.classBox button:hover {
+  background-color: #ef4444; /* Tailwind red-500 */
+}
+
+/* New class input and button container */
+.newClass {
+  margin-top: 2.5rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+/* Input takes most space but doesn’t shrink below a min-width */
+.newClass input {
+  flex-grow: 1;
+  flex-shrink: 1;
+  min-width: 0; /* important to allow shrinking in flexbox */
+  padding: 0.6rem;
+  font-size: 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+}
+
+/* Add max-width and prevent button from stretching */
+.newClass button {
+  background-color: #10b981;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+
+  max-width: 120px; /* limit width */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.newClass button:hover {
+  background-color: #059669; /* Tailwind green-600 */
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  gap: 1rem; /* optional: to give some space if needed */
+}
+

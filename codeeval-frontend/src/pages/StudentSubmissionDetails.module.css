@@ -1,0 +1,30 @@
+.container {
+    padding: 2rem;
+    max-width: 900px;
+    margin: auto;
+  }
+  
+  .codeBox, .resultsBox {
+    background-color: #1e1e1e;
+    color: #dcdcdc;
+    padding: 1rem;
+    border-radius: 6px;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    margin-bottom: 1.5rem;
+    max-height: 400px;
+  }
+  
+  .gradeSection {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .gradeInput {
+    font-size: 1rem;
+    padding: 0.5rem;
+    width: 100px;
+  }
+  

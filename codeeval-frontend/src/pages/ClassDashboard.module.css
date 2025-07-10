@@ -1,0 +1,140 @@
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: #f7f9fc;
+    font-family: sans-serif;
+  }
+  
+  .header {
+    background-color: #3b82f6;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .logout {
+    background: white;
+    color: #3b82f6;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+  
+    max-width: 140px;    /* limit max width */
+    white-space: nowrap; /* prevent wrapping */
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .body {
+    display: flex;
+    flex: 1;
+  }
+  
+  .sidebar {
+    width: 250px;
+    background-color: #e5ecf6;
+    padding: 1rem;
+    overflow-y: auto;
+    border-right: 1px solid #ccc;
+  }
+  
+  .studentList {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .studentItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 0.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .studentItem span {
+    flex: 1;
+  }
+  
+  .studentItem button {
+    background: transparent;
+    border: none;
+    color: red;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .addButton {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem; /* added horizontal padding for better sizing */
+    /* Remove width: 100% so it doesn’t stretch full container */
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  
+    max-width: 140px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .mainContent {
+    flex: 1;
+    padding: 2rem;
+  }
+
+  .assignmentsGrid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  
+  .assignmentBox {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    width: 200px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .assignmentBox:hover {
+    background-color: #eef;
+  }
+  
+  .assignmentHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .createAssignmentButton {
+    margin-top: 2rem;
+    padding: 0.75rem 1.25rem;
+    font-size: 1rem;
+    cursor: pointer;
+  
+    max-width: 180px;    /* limit max width */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  
