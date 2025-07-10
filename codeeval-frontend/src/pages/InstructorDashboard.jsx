@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './InstructorDashboard.module.css';
+import API_BASE_URL from '../apiConfig';
 
 export default function InstructorDashboard() {
   const [instructorName, setInstructorName] = useState('');
@@ -16,7 +17,7 @@ export default function InstructorDashboard() {
     if (!token) return navigate('/');
 
     const fetchClasses = async () => {
-      const res = await fetch('http://127.0.0.1:8000/instructor/classes', {
+      const res = await fetch(`${API_BASE_URL}/instructor/classes`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
@@ -37,7 +38,7 @@ export default function InstructorDashboard() {
   const handleCreateClass = async () => {
     if (!newClassName.trim()) return;
 
-    const res = await fetch('http://127.0.0.1:8000/instructor/class', {
+    const res = await fetch(`${API_BASE_URL}/instructor/class`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -52,7 +53,7 @@ export default function InstructorDashboard() {
   };
 
   const handleDelete = async (id) => {
-    await fetch(`http://127.0.0.1:8000/instructor/classes/${id}`, {
+    await fetch(`${API_BASE_URL}/instructor/classes/${id}`, {
       method: 'DELETE',
       headers: { Authorization: `Bearer ${token}` },
     });

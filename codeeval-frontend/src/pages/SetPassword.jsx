@@ -2,6 +2,7 @@
 import { useSearchParams, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import styles from './SetPassword.module.css';
+import API_BASE_URL from '../apiConfig';
 
 export default function SetPassword() {
   const [password, setPassword] = useState('');
@@ -16,7 +17,7 @@ export default function SetPassword() {
     setError('');
 
     try {
-      const res = await fetch('http://127.0.0.1:8000/set-password', {
+      const res = await fetch(`${API_BASE_URL}/set-password`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password }),

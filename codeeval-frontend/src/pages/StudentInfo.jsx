@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import styles from './StudentInfo.module.css';
+import API_BASE_URL from '../apiConfig';
 
 export default function StudentInfo() {
   const { instructorId, classId, studentId } = useParams();
@@ -15,7 +16,7 @@ export default function StudentInfo() {
     const fetchStudent = async () => {
       try {
         const res = await fetch(
-          `http://127.0.0.1:8000/instructor/classes/${classId}/students`,
+          `${API_BASE_URL}/instructor/classes/${classId}/students`,
           {
             headers: { Authorization: `Bearer ${token}` },
           }

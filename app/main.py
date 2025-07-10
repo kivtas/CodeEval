@@ -16,6 +16,8 @@ import string
 import json
 from sqlalchemy import insert, select, update, delete, and_
 
+metadata.create_all(bind=engine)
+
 app = FastAPI()
 
 app.add_middleware(

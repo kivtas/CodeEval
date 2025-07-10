@@ -1,6 +1,7 @@
 // src/components/AddStudentModal.jsx
 import { useState } from 'react';
 import styles from './AddStudentModal.module.css';
+import API_BASE_URL from '../apiConfig';
 
 export default function AddStudentModal({ onClose, onAdd, classId }) {
   const [firstName, setFirstName] = useState('');
@@ -15,7 +16,7 @@ export default function AddStudentModal({ onClose, onAdd, classId }) {
     setStudentInfo(null);
 
     try {
-      const res = await fetch(`http://127.0.0.1:8000/instructor/classes/${classId}/add-student`, {
+      const res = await fetch(`${API_BASE_URL}/instructor/classes/${classId}/add-student`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -18,7 +18,7 @@ export default function VerifyEmail() {
 
     const verifyEmail = async () => {
       try {
-        const res = await fetch(`http://127.0.0.1:8000/verify-email?token=${token}`);
+        const res = await fetch(`${API_BASE_URL}/verify-email?token=${token}`);
         const data = await res.json();
 
         if (!res.ok) {

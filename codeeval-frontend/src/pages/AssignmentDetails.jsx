@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import styles from './AssignmentDetails.module.css';
 import AddTestCaseModal from '../components/AddTestCaseModal';
 import Editor from '@monaco-editor/react';
+import API_BASE_URL from '../apiConfig';
 
 export default function AssignmentDetails() {
   const { classId, assignmentId, instructorId } = useParams();
@@ -21,7 +22,7 @@ export default function AssignmentDetails() {
   }, [assignmentId]);
 
   const fetchStarterCode = async () => {
-    const res = await fetch(`http://127.0.0.1:8000/instructor/classes/${classId}/assignments`, {
+    const res = await fetch(`${API_BASE_URL}/instructor/classes/${classId}/assignments`, {
       headers: { Authorization: `Bearer ${token}` },
     });
     const data = await res.json();
@@ -30,7 +31,7 @@ export default function AssignmentDetails() {
   };
 
   const fetchStudents = async () => {
-    const res = await fetch(`http://127.0.0.1:8000/instructor/assignments/${assignmentId}/submissions`, {
+    const res = await fetch(`${API_BASE_URL}/instructor/assignments/${assignmentId}/submissions`, {
       headers: { Authorization: `Bearer ${token}` }
     });
     const data = await res.json();
@@ -38,7 +39,7 @@ export default function AssignmentDetails() {
   };
 
   const fetchTestCases = async () => {
-    const res = await fetch(`http://127.0.0.1:8000/instructor/assignments/${assignmentId}/test-cases`, {
+    const res = await fetch(`${API_BASE_URL}/instructor/assignments/${assignmentId}/test-cases`, {
       headers: { Authorization: `Bearer ${token}` },
     });
     const data = await res.json();
@@ -46,7 +47,7 @@ export default function AssignmentDetails() {
   };
 
   const handleRun = async () => {
-    const res = await fetch('http://127.0.0.1:8000/run', {
+    const res = await fetch(`${API_BASE_URL}/run`, {
       method: 'POST',
       headers: {
         Authorization: `Bearer ${token}`,
@@ -59,7 +60,7 @@ export default function AssignmentDetails() {
   };
 
   const handleSave = async () => {
-    await fetch(`http://127.0.0.1:8000/instructor/assignments/${assignmentId}/starter-code`, {
+    await fetch(`${API_BASE_URL}/instructor/assignments/${assignmentId}/starter-code`, {
       method: 'PATCH',
       headers: {
         Authorization: `Bearer ${token}`,
@@ -72,7 +73,7 @@ export default function AssignmentDetails() {
 
   const handleDeleteTestCase = async (testCaseId) => {
     if (!window.confirm('Delete this test case?')) return;
-    await fetch(`http://127.0.0.1:8000/instructor/test-cases/${testCaseId}`, {
+    await fetch(`${API_BASE_URL}/instructor/test-cases/${testCaseId}`, {
       method: 'DELETE',
       headers: { Authorization: `Bearer ${token}` }
     });

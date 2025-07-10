@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './LoginInstructor.module.css';
+import API_BASE_URL from '../apiConfig';
 
 export default function LoginInstructor() {
   const [email, setEmail] = useState('');
@@ -14,7 +15,7 @@ export default function LoginInstructor() {
     setError('');
 
     try {
-      const res = await fetch('http://127.0.0.1:8000/login/instructor', {
+      const res = await fetch(`${API_BASE_URL}/login/instructor`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password }),

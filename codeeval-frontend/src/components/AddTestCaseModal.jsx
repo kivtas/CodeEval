@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import styles from './AddTestCaseModal.module.css';
+import API_BASE_URL from '../apiConfig';
 
 export default function AddTestCaseModal({ assignmentId, token, onClose, onSuccess }) {
   const [targetFunction, setTargetFunction] = useState('');
@@ -9,7 +10,7 @@ export default function AddTestCaseModal({ assignmentId, token, onClose, onSucce
 
   const handleSubmit = async () => {
     try {
-      const res = await fetch(`http://127.0.0.1:8000/instructor/assignments/${assignmentId}/test-cases`, {
+      const res = await fetch(`${API_BASE_URL}/instructor/assignments/${assignmentId}/test-cases`, {
         method: 'POST',
         headers: {
           Authorization: `Bearer ${token}`,

@@ -1,6 +1,7 @@
 import styles from './Register.module.css';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import API_BASE_URL from '../apiConfig';
 
 export default function Register() {
   const [name, setName] = useState('');
@@ -13,7 +14,7 @@ export default function Register() {
     setError('');
 
     try {
-      const res = await fetch('http://127.0.0.1:8000/register-instructor', {
+      const res = await fetch(`${API_BASE_URL}/register-instructor`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, email }),

@@ -1,6 +1,7 @@
 // src/components/CreateAssignmentModal.jsx
 import { useState } from 'react';
 import styles from './CreateAssignmentModal.module.css';
+import API_BASE_URL from '../apiConfig';
 
 export default function CreateAssignmentModal({ onClose, onCreate, classId }) {
   const [title, setTitle] = useState('');
@@ -14,7 +15,7 @@ export default function CreateAssignmentModal({ onClose, onCreate, classId }) {
     setError('');
 
     try {
-      const res = await fetch(`http://127.0.0.1:8000/instructor/classes/${classId}/assignments`, {
+      const res = await fetch(`${API_BASE_URL}/instructor/classes/${classId}/assignments`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

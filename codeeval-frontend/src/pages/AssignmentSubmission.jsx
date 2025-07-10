@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import styles from './AssignmentSubmission.module.css';
 import Editor from '@monaco-editor/react';
+import API_BASE_URL from '../apiConfig';
 
 export default function AssignmentSubmission() {
   const { assignmentId, studentId } = useParams();
@@ -22,7 +23,7 @@ export default function AssignmentSubmission() {
 
   const fetchAssignmentDetails = async () => {
     try {
-      const res = await fetch(`http://127.0.0.1:8000/student/${studentId}/assignments`, {
+      const res = await fetch(`${API_BASE_URL}/student/${studentId}/assignments`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -40,7 +41,7 @@ export default function AssignmentSubmission() {
 
   const fetchPublicTestCases = async () => {
     try {
-      const res = await fetch(`http://127.0.0.1:8000/student/assignments/${assignmentId}/test-cases`, {
+      const res = await fetch(`${API_BASE_URL}/student/assignments/${assignmentId}/test-cases`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -54,7 +55,7 @@ export default function AssignmentSubmission() {
 
   const handleRun = async () => {
     try {
-      const res = await fetch('http://127.0.0.1:8000/run', {
+      const res = await fetch(`${API_BASE_URL}/run`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ code }),
@@ -76,7 +77,7 @@ export default function AssignmentSubmission() {
   const handleSubmit = async () => {
     setSubmitting(true);
     try {
-      const res = await fetch(`http://127.0.0.1:8000/student/assignments/${assignmentId}/submit`, {
+      const res = await fetch(`${API_BASE_URL}/student/assignments/${assignmentId}/submit`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import styles from './StudentDashboard.module.css';
+import API_BASE_URL from '../apiConfig';
 
 export default function StudentDashboard() {
   const { studentId } = useParams();
@@ -14,7 +15,7 @@ export default function StudentDashboard() {
     if (!token) return navigate('/');
 
     const fetchAssignments = async () => {
-      const res = await fetch(`http://127.0.0.1:8000/student/${studentId}/assignments`, {
+      const res = await fetch(`${API_BASE_URL}/student/${studentId}/assignments`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();

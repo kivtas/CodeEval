@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import styles from './StudentSubmissionDetails.module.css';
+import API_BASE_URL from '../apiConfig';
 
 export default function StudentSubmissionDetails() {
   const { assignmentId, studentId, classId } = useParams();
@@ -18,7 +19,7 @@ export default function StudentSubmissionDetails() {
   }, []);
 
   const fetchSubmission = async () => {
-    const res = await fetch(`http://127.0.0.1:8000/instructor/assignments/${assignmentId}/submissions`, {
+    const res = await fetch(`${API_BASE_URL}/instructor/assignments/${assignmentId}/submissions`, {
       headers: { Authorization: `Bearer ${token}` }
     });
     const data = await res.json();
@@ -34,7 +35,7 @@ export default function StudentSubmissionDetails() {
 
   const handleSaveGrade = async () => {
     setIsSaving(true);
-    await fetch(`http://127.0.0.1:8000/instructor/assignments/${assignmentId}/submissions/${studentId}/grade`, {
+    await fetch(`${API_BASE_URL}/instructor/assignments/${assignmentId}/submissions/${studentId}/grade`, {
       method: 'PATCH',
       headers: {
         Authorization: `Bearer ${token}`,

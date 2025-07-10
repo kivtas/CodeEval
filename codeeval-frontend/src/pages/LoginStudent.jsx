@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './StudentLogin.module.css';
+import API_BASE_URL from '../apiConfig';
 
 export default function StudentLogin() {
   const [username, setUsername] = useState('');
@@ -10,7 +11,7 @@ export default function StudentLogin() {
 
   const handleLogin = async () => {
     try {
-      const res = await fetch('http://127.0.0.1:8000/login/student', {
+      const res = await fetch(`${API_BASE_URL}/login/student`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, password }),

@@ -3,6 +3,8 @@ import { useNavigate, useParams } from 'react-router-dom';
 import styles from './ClassDashboard.module.css';
 import AddStudentModal from '../components/AddStudentModal.jsx';
 import CreateAssignmentModal from '../components/CreateAssignmentModal.jsx';
+import API_BASE_URL from '../apiConfig';
+
 
 export default function ClassDashboard() {
   const { instructorId, classId } = useParams();
@@ -23,8 +25,8 @@ export default function ClassDashboard() {
   }, [classId, token, navigate]);
 
   const fetchStudents = async () => {
-    console.log("Fetching students from:", `http://127.0.0.1:8000/instructor/classes/${classId}/students`);
-    const res = await fetch(`http://127.0.0.1:8000/instructor/classes/${classId}/students`, {
+    console.log("Fetching students from:", `${API_BASE_URL}/instructor/classes/${classId}/students`);
+    const res = await fetch(`${API_BASE_URL}/instructor/classes/${classId}/students`, {
       headers: { Authorization: `Bearer ${token}` },
     });
     const data = await res.json();
@@ -33,8 +35,8 @@ export default function ClassDashboard() {
   };
 
   const fetchAssignments = async () => {
-    console.log("Fetching assignments from:", `http://127.0.0.1:8000/instructor/classes/${classId}/assignments`);
-    const res = await fetch(`http://127.0.0.1:8000/instructor/classes/${classId}/assignments`, {
+    console.log("Fetching assignments from:", `${API_BASE_URL}/instructor/classes/${classId}/assignments`);
+    const res = await fetch(`${API_BASE_URL}/instructor/classes/${classId}/assignments`, {
       headers: { Authorization: `Bearer ${token}` },
     });
     const data = await res.json();
@@ -44,7 +46,7 @@ export default function ClassDashboard() {
 
   const handleDeleteStudent = async (studentId) => {
     if (!window.confirm("Are you sure you want to remove this student?")) return;
-    await fetch(`http://127.0.0.1:8000/instructor/classes/${classId}/students/${studentId}`, {
+    await fetch(`${API_BASE_URL}/instructor/classes/${classId}/students/${studentId}`, {
       method: 'DELETE',
       headers: { Authorization: `Bearer ${token}` },
     });
@@ -53,7 +55,7 @@ export default function ClassDashboard() {
 
   const handleDeleteAssignment = async (assignmentId) => {
     if (!window.confirm("Are you sure you want to delete this assignment?")) return;
-    await fetch(`http://127.0.0.1:8000/instructor/assignments/${assignmentId}`, {
+    await fetch(`${API_BASE_URL}/instructor/assignments/${assignmentId}`, {
       method: 'DELETE',
       headers: { Authorization: `Bearer ${token}` },
     });
