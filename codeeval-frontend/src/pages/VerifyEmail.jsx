@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import styles from './VerifyEmail.module.css';
+import API_BASE_URL from '../apiConfig';
 
 export default function VerifyEmail() {
   const [searchParams] = useSearchParams();
@@ -25,12 +26,11 @@ export default function VerifyEmail() {
           throw new Error(data.detail || 'Verification failed.');
         }
 
-        // Example: "Email satvik@example.com has been verified."
-        const email = data.message.split(' ')[1];
+        const email = data.email;
         setMessage('Email verified successfully! Redirecting to password setup...');
 
         setTimeout(() => {
-          navigate(`/set-password?email=${email}`);
+          navigate(`/set-password?email=${encodeURIComponent(email)}`);
         }, 2000);
       } catch (err) {
         setError(err.message);
