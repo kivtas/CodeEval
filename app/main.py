@@ -22,7 +22,7 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],  # or ["*"] for dev/testing
+    allow_origins=["http://localhost:5173","https://codeeval-hnsg.onrender.com"],  # or ["*"] for dev/testing
     allow_credentials=True,
     allow_methods=["*"],  # <-- important! includes OPTIONS
     allow_headers=["*"],
