@@ -16,6 +16,8 @@ SMTP_HOST = os.getenv("SMTP_HOST")
 SMTP_PORT = int(os.getenv("SMTP_PORT"))
 EMAIL_USER = os.getenv("EMAIL_USER")
 EMAIL_PASS = os.getenv("EMAIL_PASS")
+FRONTEND_BASE_URL=os.getenv("FRONTEND_BASE_URL")
+
 
 def generate_token(email: str) -> str:
     return serializer.dumps(email, salt=SALT)
@@ -25,7 +27,7 @@ def verify_token(token: str, max_age: int = 3600):
 
 async def send_verification_email(email: str):
     token = generate_token(email)
-    link = f"http://localhost:5173/verify?token={token}"
+    link = f"{FRONTEND_BASE_URL}/verify?token={token}"
 
     message = EmailMessage()
     message["From"] = EMAIL_USER
