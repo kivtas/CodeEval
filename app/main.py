@@ -139,7 +139,7 @@ async def verify_email(token: str):
     )
     await database.execute(update_query)
 
-    return {"message": f"Email {email} has been verified."}
+    return {"email": email}
 
 @app.post("/set-password")
 async def set_password_endpoint(data: PasswordSetRequest):
